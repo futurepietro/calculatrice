@@ -64,7 +64,7 @@ export class AboutComponent {
 
   private removeNumberInternal(aNumber: number): number {
     let tempString = String(aNumber);
-    if (tempString.length > 2) {
+    if (tempString.length > 1) {
       tempString = tempString.substring(0, tempString.length - 1);
     }
     else if (tempString.length == 1) {
