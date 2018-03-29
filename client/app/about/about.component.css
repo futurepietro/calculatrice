@@ -1,0 +1,15 @@
+.table td,
+.table th {
+  width: 25%;
+}
+.selectedSide{
+  background-color:grey;
+  color:red;
+  transition:0.3s all linear;
+}
+
+.selectedNumber{
+  transition:0.3s all linear;
+  font-size:18px;
+  color:red;
+}

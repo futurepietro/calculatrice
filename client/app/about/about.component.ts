@@ -8,7 +8,8 @@ enum SelectedSide {
 
 @Component({
   selector: 'app-about',
-  templateUrl: './about.component.html'
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css']
 })
 
 export class AboutComponent {
@@ -24,7 +25,9 @@ export class AboutComponent {
     this.result = 0;
     this.selectedSide = 1;
   }
-
+  public changeSide(aSide: number) {
+    this.selectedSide = aSide;
+  }
   public range(min, max, step) {
     step = step || 1;
     var input = [];

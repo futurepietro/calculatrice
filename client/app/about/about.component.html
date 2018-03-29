@@ -3,21 +3,20 @@
   <div class="card-body">
     <table>
       <tr>
-        <td>
+        <td [ngClass]="{'selectedNumber': selectedSide==2}">
           {{numberOne}}
         </td>
-      </tr>
-      <tr>
-        <td>
+        <td>+</td>
+         <td [ngClass]="{'selectedNumber': selectedSide==3}">
            {{numberTwo}}
         </td>
       </tr>
       <tr>
-        <td>
+        <td colspan="3">
           <hr>
         </td>
       </tr>
-      <tr>
+      <tr colspan="3">
         <td>
             {{result}}
         </td>
@@ -25,12 +24,12 @@
     </table>
     <table>
       <tr>
-        <td [ngClass]="{'selectedSide': selectedSide==2}">
+        <td (click)="changeSide(2)" [ngClass]="{'selectedSide': selectedSide==2}">
           <- </td>
             <td>
               0
             </td>
-            <td [ngClass]="{'selectedSide': selectedSide==3}">
+            <td (click)="changeSide(3)" [ngClass]="{'selectedSide': selectedSide==3}">
               ->
             </td>
       </tr>
