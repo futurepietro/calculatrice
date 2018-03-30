@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { CatsComponent } from './cats/cats.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CalculatorService } from "./services/calculator.service";
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -31,7 +32,8 @@ export function tokenGetter() {
     })
   ],
   providers: [
-    CatService
+    CatService,
+    CalculatorService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

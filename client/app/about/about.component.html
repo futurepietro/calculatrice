@@ -4,11 +4,11 @@
       <table>
         <tr>
           <td [ngClass]="{'selectedNumber': selectedSide==2}">
-            {{numberOne}}
+            {{calculator.numberOne}}
           </td>
           <td>+</td>
           <td [ngClass]="{'selectedNumber': selectedSide==3}">
-            {{numberTwo}}
+            {{calculator.numberTwo}}
           </td>
         </tr>
         <tr>
@@ -18,7 +18,7 @@
         </tr>
         <tr>
           <td colspan="3" class="result">
-            {{result}}
+            {{calculator.result}}
           </td>
         </tr>
       </table>
@@ -49,18 +49,14 @@
           </td>
         </tr>
         <tr>
-          <td colspan="3" (click)="solveProblem()">
-            Calculer
-          </td>
-        </tr>
-        <tr>
-          <td colspan="3" (click)="removeLast()">
+          <td (click)="removeLast()">
             C
           </td>
-        </tr>
-        <tr>
-          <td colspan="3" (click)="resetNumbers()">
-            Redemarrer
+           <td  (click)="solveProblem()">
+            Ca
+          </td>
+          <td  (click)="resetNumbers()">
+            R
           </td>
         </tr>
       </table>
