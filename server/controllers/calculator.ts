@@ -2,15 +2,15 @@ import Calculator from '../models/calculator';
 
 export default class CalculatorControler   {
   model = Calculator;
-  // Get all
+  // Get Result
   getResult = (req, res) => {
-    console.log("req");
-    console.log(req);
-    /** 
-    this.model.find({}, (err, docs) => {
-      if (err) { return console.error(err); }
-      res.status(200).json(docs);
-    });*/
+    let localCalculator = req.body;
+    let randomTimeout =  Math.random();
+    randomTimeout = randomTimeout*1300;
+    localCalculator.result = localCalculator.numberOne + localCalculator.numberTwo;
+    setTimeout(function(){
+      res.status(200).json(localCalculator);
+    }, randomTimeout);
   }
 
 }

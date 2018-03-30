@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { CalculatorService } from '../services/calculator.service';
-import { Calculator } from '../shared/models/calculator.model';
+import { ICalculator } from '../shared/models/calculator.model';
 
 enum SelectedSide {
   None = 1,
@@ -17,22 +17,22 @@ enum SelectedSide {
 
 export class AboutComponent {
 
-  numberOne: number;
-  numberTwo: number;
-  result: number;
-  selectedSide: SelectedSide;
-  calculator : Calculator;
 
-  constructor(private CalculatorService: CalculatorService) {
+  public selectedSide: SelectedSide;
+  public calculator: ICalculator;
+  public isCalculating : boolean;
+
+  constructor(private calculatorService: CalculatorService) {
+    this.calculator = { "numberOne": 0, "numberTwo": 0, "result": 0 };
     this.resetNumbers();
-    
   }
 
   public resetNumbers() {
-    this.numberOne = 0;
-    this.numberTwo = 0;
-    this.result = 0;
+    this.calculator.numberOne = 0;
+    this.calculator.numberTwo = 0;
+    this.calculator.result = 0;
     this.selectedSide = 1;
+    this.isCalculating = false;
   }
 
   public changeSide(aSide: number) {
@@ -46,32 +46,35 @@ export class AboutComponent {
   public addNumber(aNumber: number) {
     let tempString: string;
     if (this.selectedSide == 2) {
-      tempString = String(this.numberOne);
+      tempString = String(this.calculator.numberOne);
       tempString += String(aNumber);
-      this.numberOne = +tempString;
+      this.calculator.numberOne = +tempString;
     } else if (this.selectedSide == 3) {
-      tempString = String(this.numberTwo);
+      tempString = String(this.calculator.numberTwo);
       tempString += String(aNumber);
-      this.numberTwo = +tempString;
+      this.calculator.numberTwo = +tempString;
     }
   }
 
   public removeLast() {
     if (this.selectedSide == 2) {
-      this.numberOne = this.removeNumberInternal(this.numberOne);
+      this.calculator.numberOne = this.removeNumberInternal(this.calculator.numberOne);
     } else if (this.selectedSide == 3) {
-      this.numberTwo = this.removeNumberInternal(this.numberTwo);
+      this.calculator.numberTwo = this.removeNumberInternal(this.calculator.numberTwo);
     }
   }
+
   public solveProblem() {
-    this.calculator.numberOne = this.numberOne;
-    this.calculator.numberTwo = this.numberTwo;
+    this.calculator.numberOne = this.calculator.numberOne;
+    this.calculator.numberTwo = this.calculator.numberTwo;
     this.calculator.result = 0;
-    //this.result = this.numberOne + this.numberTwo;
-     this.CalculatorService.getResult(this.calculator).subscribe(
-      data => this.calculator = data,
+    this.isCalculating = true;
+    this.calculatorService.getResult(this.calculator).subscribe(
+      data => {
+        this.calculator = data;
+      },
       error => console.log(error),
-      () => console.log("finished")
+      () =>  this.isCalculating = false
     );
   }
 
