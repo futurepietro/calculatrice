@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { CalculatorService } from '../services/calculator.service';
+import { Calculator } from '../shared/models/calculator.model';
+
 enum SelectedSide {
   None = 1,
   Left,
@@ -18,9 +21,11 @@ export class AboutComponent {
   numberTwo: number;
   result: number;
   selectedSide: SelectedSide;
+  calculator : Calculator;
 
-  constructor() {
+  constructor(private CalculatorService: CalculatorService) {
     this.resetNumbers();
+    
   }
 
   public resetNumbers() {
@@ -59,7 +64,15 @@ export class AboutComponent {
     }
   }
   public solveProblem() {
-    this.result = this.numberOne + this.numberTwo;
+    this.calculator.numberOne = this.numberOne;
+    this.calculator.numberTwo = this.numberTwo;
+    this.calculator.result = 0;
+    //this.result = this.numberOne + this.numberTwo;
+     this.CalculatorService.getResult(this.calculator).subscribe(
+      data => this.calculator = data,
+      error => console.log(error),
+      () => console.log("finished")
+    );
   }
 
   private removeNumberInternal(aNumber: number): number {
