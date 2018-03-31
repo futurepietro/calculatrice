@@ -2,10 +2,13 @@
 .table th {
   width: 25%;
 }
+table{
+    width: 80vw;
+    height: 45vh;
+    max-width: 700px;
+    table-layout: fixed;
+}
 td{
-  padding:26px;
-  min-width:75px;
-  max-width:300px;
   vertical-align:center;
   text-align:center;
 }
@@ -25,6 +28,4 @@ text-align: center;
   transition:0.3s all linear;
   font-size:18px;
   color:red;
-  padding-top:24px;
-  padding-bottom:24px;
 }
