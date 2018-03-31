@@ -15,6 +15,11 @@ td{
 .calculator{
   margin:auto;
   display:table;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.calculator:hover{
+box-shadow: 0 4px 10px rgba(0,0,0,0.15), 0 5px 10px rgba(0,0,0,0.12);
+    transform: scale(1.01);
 }
 .result{
 text-align: center;
