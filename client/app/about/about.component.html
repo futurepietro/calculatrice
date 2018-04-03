@@ -1,11 +1,11 @@
 <div class="calculator">
   <table>
     <tr [ngClass]="{'blurred': isCalculating }">
-      <td [ngClass]="{'selectedNumber': selectedSide==2}" (click)="changeSide(2)" class="pointer">
+      <td [ngClass]="{'selectedNumber': selectedSide==2}" (click)="changeSide(2)" class="pointer btn-4">
         {{calculator.numberOne}}
       </td>
       <td>+</td>
-      <td [ngClass]="{'selectedNumber': selectedSide==3}" (click)="changeSide(3)" class="pointer">
+      <td [ngClass]="{'selectedNumber': selectedSide==3}" (click)="changeSide(3)" class="pointer btn-4">
         {{calculator.numberTwo}}
       </td>
     </tr>
@@ -27,34 +27,34 @@
   </table>
   <table [ngClass]="{'blurred': isCalculating }">
     <tr>
-      <td (click)="removeLast()" class="pointer upperButton" [ngClass]="{'isSelected': selectedSide==3||selectedSide==2}">
+      <td (click)="removeLast()" class="pointer upperButton " [ngClass]="{'isSelected btn-4': selectedSide==3||selectedSide==2}">
         <i class="fas fa-long-arrow-alt-left"></i>
       </td>
-      <td (click)="addNumber(0)" class="noSelect pointer upperButton" [ngClass]="{'isSelected': selectedSide==3||selectedSide==2}">
+      <td (click)="addNumber(0)" class="noSelect pointer upperButton" [ngClass]="{'isSelected btn-4': selectedSide==3||selectedSide==2}">
         0
       </td>
-      <td (click)="resetNumbers()" class="pointer alwaysActive">
+      <td (click)="resetNumbers()" class="pointer alwaysActive btn-4">
         <i class="fas fa-redo"></i>
       </td>
     </tr>
     <tr>
-      <td *ngFor="let n of range(1,3)" (click)="addNumber(n)" class="noSelect animateNb " [ngClass]="{'pointer': selectedSide==3||selectedSide==2}">
+      <td *ngFor="let n of range(1,3)" (click)="addNumber(n) " class="noSelect animateNb " [ngClass]="{'pointer  btn-4': selectedSide==3||selectedSide==2}">
         {{n}}
       </td>
     </tr>
     <tr>
-      <td *ngFor="let n of range(4,6)" (click)="addNumber(n)" class="noSelect animateNb pointer" [ngClass]="{'pointer': selectedSide==3||selectedSide==2}">
+      <td *ngFor="let n of range(4,6)" (click)="addNumber(n)" class="noSelect animateNb pointer" [ngClass]="{'pointer btn-4': selectedSide==3||selectedSide==2}">
         {{n}}
       </td>
     </tr>
     <tr>
-      <td *ngFor="let n of range(7,9)" (click)="addNumber(n)" class="noSelect animateNb pointer" [ngClass]="{'pointer': selectedSide==3||selectedSide==2}">
+      <td *ngFor="let n of range(7,9)" (click)="addNumber(n)" class="noSelect animateNb pointer" [ngClass]="{'pointer btn-4': selectedSide==3||selectedSide==2}">
         {{n}}
       </td>
     </tr>
 
     <tr>
-      <td (click)="solveProblem()" colspan="3" class="pointer noSelect alwaysActive">
+      <td (click)="solveProblem()" colspan="3" class="pointer noSelect alwaysActive btn-4">
         =
       </td>
     </tr>
