@@ -89,8 +89,8 @@ export class CalculatorComponent {
     return +tempString;
   }
 
-  public range(min, max, step) {
-    step = step || 1;
+  public range(min, max) {
+    let step = 1;
     var input = [];
     for (var i = min; i <= max; i += step) input.push(i);
     return input;
