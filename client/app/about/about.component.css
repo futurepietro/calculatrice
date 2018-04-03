@@ -1,6 +1,13 @@
+*{
+    transition: all 0.7s cubic-bezier(.25,.8,.25,1); 
+}
 .table td,
 .table th {
   width: 25%;
+}
+
+hr{
+  padding:0px;
 }
 table{
     width: 80vw;
@@ -30,6 +37,7 @@ td{
 }
 .result{
 text-align: center;
+font-size: 7vmax;
 }
 .selectedSide{
   background-color:grey;
@@ -53,10 +61,24 @@ text-align: center;
 }
 .pointer{
    cursor:pointer;
+   font-size:18px;
 }
-.pointer.animateNb{
-   transition: all 0.3s cubic-bezier(.25,.8,.25,1); 
+.noSelect.animateNb,.isSelected.upperButton,.pointer.upperButton{
+  color:grey;
+  opacity:0.35;
 }
-.pointer.animateNb:hover{
-  color:blue;
+.noSelect.animateNb.pointer,.isSelected.upperButton.pointer{
+  color:#212529;
+   opacity:1;
+}
+.pointer.animateNb:hover,.isSelected.upperButton:hover,.alwaysActive:hover{
+ border:1px solid red;
+ color:#212529;
+   opacity:1;
+}
+.blurred{
+  filter: blur(3px) ;
+  background-color: #efefef;
+    color: #b9b9b9;
+  pointer-events: none;
 }
