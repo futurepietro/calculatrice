@@ -6,7 +6,7 @@ export default class CalculatorControler   {
   getResult = (req, res) => {
     let localCalculator = req.body;
     let randomTimeout =  Math.random();
-    randomTimeout = randomTimeout*1500;
+    randomTimeout = randomTimeout*3500;
     localCalculator.result = localCalculator.numberOne + localCalculator.numberTwo;
     setTimeout(function(){
       res.status(200).json(localCalculator);
