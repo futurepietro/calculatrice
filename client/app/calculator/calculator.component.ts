@@ -10,12 +10,12 @@ enum SelectedSide {
 }
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  selector: 'app-calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.css']
 })
 
-export class AboutComponent {
+export class CalculatorComponent {
 
 
   public selectedSide: SelectedSide;
