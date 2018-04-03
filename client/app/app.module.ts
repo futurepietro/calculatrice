@@ -3,10 +3,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
-import { CatService } from './services/cat.service';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { CatsComponent } from './cats/cats.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CalculatorService } from "./services/calculator.service";
 
@@ -17,8 +15,7 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    CatsComponent,
-    AboutComponent,
+    CalculatorComponent,
     NotFoundComponent
   ],
   imports: [
@@ -32,7 +29,6 @@ export function tokenGetter() {
     })
   ],
   providers: [
-    CatService,
     CalculatorService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
