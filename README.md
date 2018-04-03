@@ -1,6 +1,6 @@
 # Calculatrice pour Arte.tv (client-server) [![Dependencies](https://david-dm.org/DavideViolante/Angular-Full-Stack.svg)](https://www.paypal.me/dviolante) [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
 
-## Prerequisites
+## Conditions préalables
 1. Télécharger [Node.js](https://nodejs.org)
 2. Télécharger Angular CLI: `npm i -g @angular/cli`
 3. À partir du dossier racine, télécharger les dépendences: `npm i`
@@ -13,7 +13,7 @@
 2. Backtend (serveur) : 1h15 
 3. Bugfix (serveur) : 1h 
 
-## Run
+## Exécution
 ### À partir du dossier racine, ouvrir une terminal et exécuter :
 `npm run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently)  Angular build, TypeScript compiler 
 
