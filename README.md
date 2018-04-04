@@ -15,7 +15,7 @@
 
 ## Exécution
 ### À partir du dossier racine, ouvrir une terminal et exécuter :
-`npm run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently)  Angular build, TypeScript compiler 
+`npm run dev`
 
 ----
 The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org).
@@ -30,11 +30,9 @@ Other tools and technologies used:
 * [Angular CLI](https://cli.angular.io): frontend scaffolding
 * [Bootstrap](http://www.getbootstrap.com): layout and styles
 * [Font Awesome](http://fontawesome.io): icons
-* [JSON Web Token](https://jwt.io): user authentication
 * [Angular 2 JWT](https://github.com/auth0/angular2-jwt/tree/v1.0): JWT helper for Angular
-* [Bcrypt.js](https://github.com/dcodeIO/bcrypt.js): password encryption
 
-### Author Calculator 
+### Author for Calculator 
 * [Pietro Primo](https://github.com/primopietro)
 ### Author Angular CLI
 * [Davide Violante](https://github.com/DavideViolante)
